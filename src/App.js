@@ -10,14 +10,13 @@ import Info from './components/Info';
 import { Container, Box} from '@mui/system';
 import { blue } from '@mui/material/colors';
 import { useEffect, useState } from 'react';
-import Tour from './components/Tour';
 import Tours from './components/Tours';
 
 import Loading from './Loading';
 
 const url = 'https://course-api.com/react-tours-project';
 
-
+// const url = 'toursData.json';
 
   function App(){
 
@@ -25,6 +24,10 @@ const url = 'https://course-api.com/react-tours-project';
     const [isLoading, setIsLoading]= useState(true)
     const [tours, setTours]= useState([])
 
+    const removeTours = (id) => {
+      const newTours = tours.filter((tour) => tour.id !== id);
+      setTours(newTours);
+    };
     
     const fetchTours = async () =>{
       setIsLoading(true);
@@ -53,7 +56,8 @@ const url = 'https://course-api.com/react-tours-project';
       <div>
       <Navbar/>
       <br></br>
-      <h2>tours starter</h2>
+
+      <Tours tours={tours}/>
       {/* <Box display={'flex'} flexDirection={'row'} justifyContent={'space-evenly'} backgroundColor={'#B2AC88'}> <Card/> </Box>
       <br></br>
       <Box display={'flex'} flexDirection={'row'} justifyContent={'space-evenly'}> <Info/> <Maincard/> </Box>
@@ -64,8 +68,10 @@ const url = 'https://course-api.com/react-tours-project';
       <div css={`color:green`}>
         <h2>hello world</h2>
       </div> */}
-    </div>
-    )
+  </div>
+)
+
+
 }
 
 
