@@ -24,7 +24,7 @@ const url = 'https://course-api.com/react-tours-project';
     const [isLoading, setIsLoading]= useState(true)
     const [tours, setTours]= useState([])
 
-    const removeTours = (id) => {
+    const removeTour = (id) => {
       const newTours = tours.filter((tour) => tour.id !== id);
       setTours(newTours);
     };
@@ -51,13 +51,28 @@ const url = 'https://course-api.com/react-tours-project';
         <Loading/>
       </main>
      }
+
+     if(tours.length === 0){
+      return <main>
+        <div className='title'>
+          <h2>no tours left</h2>
+          <button type='button' style={{marginTop:'2rem'}}
+          className='buttonReadMore' onClick={()=> fetchTours()}
+          >
+            Refresh
+          </button>
+        </div>
+      </main>
+     }
+
+
     return (
 
       <div>
       <Navbar/>
       <br></br>
-
-      <Tours tours={tours}/>
+      <Tours tours={tours} removeTour={removeTour} />
+      {/* <Tours tours={tours}/> */}
       {/* <Box display={'flex'} flexDirection={'row'} justifyContent={'space-evenly'} backgroundColor={'#B2AC88'}> <Card/> </Box>
       <br></br>
       <Box display={'flex'} flexDirection={'row'} justifyContent={'space-evenly'}> <Info/> <Maincard/> </Box>
