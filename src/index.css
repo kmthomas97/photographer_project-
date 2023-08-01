@@ -63,8 +63,8 @@ body {
   text-align: center;
   font-size: xx-large;
   text-transform: capitalize;
-  margin-bottom: 3.5rem;
-  margin-top: 3.5rem;
+  margin-bottom: 3.0rem;
+  margin-top: 3.0rem;
   font-family: 'Handlee', cursive;
   font-family: 'Sansita', sans-serif;
   letter-spacing: 0.1rem;
@@ -135,8 +135,6 @@ a{
   color: var(--clr-white);
   letter-spacing: 0.1rem;
   text-transform: uppercase;
-  font-family: 'Handlee', cursive;
-  font-family: 'Sansita', sans-serif;
 }
 
 .hero-btn{
