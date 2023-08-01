@@ -19,7 +19,7 @@ const Navbar = () => {
     return ( 
     <StyledNavbar>
       <div className="nav-header"/>
-         <img src='./images/JaneDoe.svg'
+         <img src='./images/download (13).svg'
         alt='logo' />
         <button className="nav-toggle" onClick={toggleLinks}>
           <FaBars />
@@ -46,7 +46,8 @@ const Navbar = () => {
 
 const StyledNavbar = styled.nav`
 
-background: var(--clr-white);
+/* background: var(--clr-white); */
+background-color: #f0f8ff;
 box-shadow: var(--light-shadow);
 
 
@@ -69,7 +70,7 @@ box-shadow: var(--light-shadow);
     cursor: pointer;
   }
   .nav-toggle:hover {
-    color: var(--primary-1);
+    color: var(--clr-grey-3);
     /* transform: rotate(90deg); */
   }
 
@@ -78,7 +79,10 @@ box-shadow: var(--light-shadow);
   }
 
   .a{
-        color: var(--clr-grey-3);
+        font-family: 'Handlee', cursive;
+        font-family: 'Sansita', sans-serif;
+        font-weight: 300;
+        color: #005f73;
         font-size: 1.5rem;
         text-transform: capitalize;
         letter-spacing: 0.1rem;
@@ -136,7 +140,6 @@ box-shadow: var(--light-shadow);
       margin: 0 0.5rem;
       &:hover{
         padding: 0;
-        background: var(--clr-primary-5);
       }
     }
   }

@@ -11,12 +11,12 @@ import { Container, Box} from '@mui/system';
 import { blue } from '@mui/material/colors';
 import { useEffect, useState } from 'react';
 import Tours from './components/Tours';
-
+import Hero from './components/Hero';
 import Loading from './Loading';
 
-const url = 'https://course-api.com/react-tours-project';
+// const url = 'https://course-api.com/react-tours-project';
 
-// const url = 'toursData.json';
+const url = 'packagesData.json';
 
   function App(){
 
@@ -70,6 +70,7 @@ const url = 'https://course-api.com/react-tours-project';
 
       <div>
       <Navbar/>
+      <Hero/>
       <br></br>
       <Tours tours={tours} removeTour={removeTour} />
       {/* <Tours tours={tours}/> */}
@@ -91,4 +92,5 @@ const url = 'https://course-api.com/react-tours-project';
 
 
 export default App;
+
 

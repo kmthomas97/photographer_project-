@@ -22,7 +22,14 @@
   --radius: 0.25rem;
 
 
+
+
+    background: url('/Users/kmthomas/code/photographer_project/public/images/pink-background.jpg') center/cover no-repeat;
+  
 }
+
+
+
 
 
 
@@ -52,6 +59,19 @@ body {
   margin-bottom: 4rem;
 }
 
+.title-photography {
+  text-align: center;
+  font-size: xx-large;
+  text-transform: capitalize;
+  margin-bottom: 3.5rem;
+  margin-top: 3.5rem;
+  font-family: 'Handlee', cursive;
+  font-family: 'Sansita', sans-serif;
+  letter-spacing: 0.1rem;
+  font-weight: 300;
+  color: #005f73;
+  
+}
 .underline {
   width: 6rem;
   height: 0.25rem;
@@ -87,16 +107,72 @@ a{
   margin: 1 rem auto;
 } */
 
-/* .bg-grey {
-  background: grey;
-} */
+
+
+/* Hero Section*/
+.hero{
+  min-height: 70vh;
+  background: var(--clr-primary-5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-banner{
+  text-align: center;
+  color: var(--clr-white);
+  padding: 0 3rem;
+}
+.hero-banner h1{
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  font-family: 'Handlee', cursive;
+  font-family: 'Sansita', sans-serif;
+}
+.hero-banner p{
+  max-width: 35 rem;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--clr-white);
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  font-family: 'Handlee', cursive;
+  font-family: 'Sansita', sans-serif;
+}
+
+.hero-btn{
+  padding: 0.9 rem 1.6rem;
+  font-size: 1.25rem;
+  background: var(--clr-white);
+  color: var(--clr-primary-5);
+}
+.hero-btn:hover{
+  background: transparent;
+  color: var(--clr-white);
+  border-color: var(--clr-grey-1);
+}
+
+@media screen and (min-width: 768px) {
+  .hero{
+    background: linear-gradient(rgb(44, 174, 186, 0.7), rgba(0, 0, 0, 0.7)), url('/Users/kmthomas/code/photographer_project/public/images/pexels-water.jpg') center/cover no-repeat;
+    min-height: 90vh;
+  }
+  .hero-banner{
+    max-width: 45 rem;
+  }
+  
+  .hero-banner p{
+    max-width: 45rem;
+  }
+}
 
 
 /*tours css*/
 .title {
+  margin-top: 3rem;
   text-transform: uppercase;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
   text-align: center;
+  color: #005f73;
 }
 main{
   width: 90vw;
@@ -105,12 +181,13 @@ main{
 }
 
 .single-tour {
-  background: var(--clr-white);
+  background-color: #f0f8ff;
   border-radius: var(--radius);
   margin: 2rem 0;
   box-shadow: var(--light-shadow);
   transition: var(--transition);
   position: relative;
+
 }
 .single-tour:hover {
   box-shadow: var(--dark-shadow);
@@ -141,13 +218,15 @@ main{
 }
 
 .tour-info{
-  padding: 2rem 1.5rem;
+  padding: 1.0rem 1.5rem;
 }
 .tour-info h5 {
-  font-size: large;
+  font-family: 'Handlee', cursive;
+  font-family: 'Sansita', sans-serif;
+  font-size: larger;
   text-align: center;
   margin-bottom: 1rem;
-  font-weight: 500;
+
   line-height: 1.5;
 }
 
@@ -159,6 +238,8 @@ main{
 
 .delete-btn {
   display: block;
+  font-family: 'Handlee', cursive;
+  font-family: 'Sansita', sans-serif;
   width: 300px;
   margin: 1rem auto 0 auto;
   letter-spacing: var(--spacing);
@@ -173,9 +254,12 @@ main{
 
 .info-btn{
   background: transparent;
-  color: #157E09;
+  color: #005f73;
   font-weight: 600;
   border: none;
+}
+.info-btn:hover{
+  color: var(--clr-primary-5);
 }
 @media screen and (min-width: 768px){
   .tours{
