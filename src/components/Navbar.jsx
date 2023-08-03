@@ -47,7 +47,7 @@ const Navbar = () => {
 const StyledNavbar = styled.nav`
 
 /* background: var(--clr-white); */
-background-color: #f0f8ff;
+background-color: #eaf4f4;
 box-shadow: var(--light-shadow);
 
 
@@ -82,7 +82,7 @@ box-shadow: var(--light-shadow);
         font-family: 'Handlee', cursive;
         font-family: 'Sansita', sans-serif;
         font-weight: 300;
-        color: #005f73;
+        color: var(--dark-blue);
         font-size: 1.5rem;
         text-transform: capitalize;
         letter-spacing: 0.1rem;
@@ -92,7 +92,7 @@ box-shadow: var(--light-shadow);
         transition: var(--transition);
     &:hover{
       background: var(--clr-primary-8);
-      color: var(--clr-primary-5);
+      color: var(--medium-orange);
       padding-left: 1.5rem;
 
     }

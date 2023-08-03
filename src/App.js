@@ -13,22 +13,43 @@ import { useEffect, useState } from 'react';
 import Tours from './components/Tours';
 import Hero from './components/Hero';
 import Loading from './Loading';
-
+import LoadingPortfolio from './components/LoadingPortfolio';
+import Portfolios from './components/Portfolios';
+import ContactForm from './components/ContactForm';
+import Footer from './components/Footer';
+import Biography from './components/Biography';
+import Studio from './components/Studio';
 // const url = 'https://course-api.com/react-tours-project';
 
 const url = 'packagesData.json';
+const urlPortfolio = 'portfolioData.json';
+const people = 'reviewsData.json';
 
   function App(){
 
+    const [index, setIndex] =useState(0);
+    const {name, job, image, text} = people[index]
 
     const [isLoading, setIsLoading]= useState(true)
     const [tours, setTours]= useState([])
+
+    //Portfolio
+    const [isLoadingPortfolio, setIsLoadingPortfolio]= useState(true)
+    const [portfolios, setPortfolios] = useState([])
 
     const removeTour = (id) => {
       const newTours = tours.filter((tour) => tour.id !== id);
       setTours(newTours);
     };
+
+    //Portfolio
+    const removePortfolio = (id) => {
+      const newPortfolios = portfolios.filter((portfolio) => portfolio.id !== id);
+      setPortfolios(newPortfolios);
+    };
     
+
+
     const fetchTours = async () =>{
       setIsLoading(true);
       try{
@@ -42,9 +63,30 @@ const url = 'packagesData.json';
 
     };
 
+    //Portfolio
+
+
+    const fetchPortfolios = async () =>{
+      setIsLoadingPortfolio(true);
+      try{
+        const response = await fetch(urlPortfolio);
+        const portfolios = await response.json();
+        setPortfolios(portfolios);
+      } catch (error) {
+        console.log(error);
+      }
+      setIsLoadingPortfolio(false)
+
+    };
+
     useEffect(()=>{
       fetchTours();
      }, []);
+
+     //Portfolio
+     useEffect(()=>{
+      fetchPortfolios();
+    }, []);
 
      if(isLoading){
       return <main>
@@ -53,7 +95,6 @@ const url = 'packagesData.json';
      }
 
      if(tours.length === 0){
-      return <main>
         <div className='title'>
           <h2>no tours left</h2>
           <button type='button' style={{marginTop:'2rem'}}
@@ -62,8 +103,28 @@ const url = 'packagesData.json';
             Refresh
           </button>
         </div>
+     }
+
+     if(isLoadingPortfolio){
+      return <main>
+        <LoadingPortfolio/>
       </main>
      }
+
+ if(portfolios.length === 0){
+  return <main>
+    <div className='title-portfolio'>
+      <h2>no portfolios left</h2>
+      <button type='button' style={{marginTop:'2rem'}}
+      className='buttonReadMore' onClick={()=> fetchPortfolios()}
+      >
+        Refresh
+      </button>
+    </div>
+  </main>
+
+     }
+     
 
 
     return (
@@ -72,7 +133,34 @@ const url = 'packagesData.json';
       <Navbar/>
       <Hero/>
       <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <Biography/>
+      <br></br>
+      <br></br>
+      <br></br>
       <Tours tours={tours} removeTour={removeTour} />
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <Studio/>
+      <br></br>
+      <br></br>
+      <br></br>
+      <Portfolios portfolios={portfolios} removePortfolio={removePortfolio} />
+      <br></br>
+      <br></br>
+      <ContactForm/>
+      <br></br>
+      <br></br>
+      <Footer/>
+      {/* <br></br>
+      <ContactForm/>
+      <Footer/> */}
       {/* <Tours tours={tours}/> */}
       {/* <Box display={'flex'} flexDirection={'row'} justifyContent={'space-evenly'} backgroundColor={'#B2AC88'}> <Card/> </Box>
       <br></br>

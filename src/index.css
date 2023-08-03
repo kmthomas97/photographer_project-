@@ -17,20 +17,20 @@
   --clr-grey-10: hsl(210, 36%, 96%);
   --clr-primary-10: hsl(205, 100%, 96%);
   --clr-white: #fff;
+  --dark-blue: #446776;
+  --blue-medium: #597a88;
+  --medium-dark-blue: #71A0B2;
+  --medium-blue: #A5C1CF;
+  --light-blue: #B8CBD9;
+  --white-blue: #eaf4f4;
+  --medium-orange: #DB966B;
   --max-width: 1170px;
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   --radius: 0.25rem;
-
-
-
-
-    background: url('/Users/kmthomas/code/photographer_project/public/images/pink-background.jpg') center/cover no-repeat;
+    background: url('/Users/kmthomas/code/photographer_project/public/images/background-blue-white.jpg') center/cover no-repeat;
+    
   
 }
-
-
-
-
 
 
 .section {
@@ -51,6 +51,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* background: #f2f4f8; */
+  width: 100%
 }
 
 .title {
@@ -69,7 +70,7 @@ body {
   font-family: 'Sansita', sans-serif;
   letter-spacing: 0.1rem;
   font-weight: 300;
-  color: #005f73;
+  color: var(--dark-blue);
   
 }
 .underline {
@@ -112,7 +113,7 @@ a{
 /* Hero Section*/
 .hero{
   min-height: 70vh;
-  background: var(--clr-primary-5);
+  background: var(--medium-dark-blue);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -163,6 +164,90 @@ a{
   }
 }
 
+/*Studio*/
+.studio-article{
+  padding-top: 1rem;
+  justify-content:space-evenly;
+  align-items: center;
+  width: max-width;
+  display: grid;
+  background: var(--medium-dark-blue);
+  grid-template-columns: repeat(auto-fit, minmax(25rem, auto));
+
+}
+.studio-text-div{
+  color: var(--white-blue);
+  width: max-width;
+  text-align: center;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  padding-bottom: 1rem;
+
+}
+.studio-text-div p {
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  line-height: 1;
+
+}
+.studio-article h1{
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  font-family: 'Handlee', cursive;
+  font-family: 'Sansita', sans-serif;
+  font-size: xx-large;
+  padding-bottom: 1rem;
+}
+
+
+/*Biography*/
+.biography-article{
+  padding-top: 6rem;
+  width: max-width;
+  padding-bottom: 6rem;
+  justify-content:space-evenly;
+  align-items: center;
+  display: grid;
+  background: var(--medium-orange);
+  grid-template-columns: repeat(auto-fit, minmax(25rem, auto));
+
+}
+.biography-text-div{
+  color: yellow;
+  width: 400px;
+  height: 400px;
+  text-align: center;
+  padding-left: 1.5rem;
+}
+.biography-text-div p {
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  font-family: 'Handlee', cursive;
+  line-height: 1.8;
+
+}
+.biography-article h1{
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  font-family: 'Handlee', cursive;
+  font-family: 'Sansita', sans-serif;
+  font-size: xx-large;
+}
+
+.biography-photo-div{
+  width: 400px;
+  height: 400px;
+  text-align: center;
+  padding-right: 1.5rem;
+}
+.biography-photo-div img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 8px solid #446776;
+}
+
+
 
 /*tours css*/
 .title {
@@ -170,7 +255,7 @@ a{
   text-transform: uppercase;
   margin-bottom: 3rem;
   text-align: center;
-  color: #005f73;
+  color: #6b9080;
 }
 main{
   width: 90vw;
@@ -179,7 +264,7 @@ main{
 }
 
 .single-tour {
-  background-color: #f0f8ff;
+  background-color: var(--white-blue);
   border-radius: var(--radius);
   margin: 2rem 0;
   box-shadow: var(--light-shadow);
@@ -252,7 +337,7 @@ main{
 
 .info-btn{
   background: transparent;
-  color: #005f73;
+  color: var(--medium-dark-blue);
   font-weight: 600;
   border: none;
 }
@@ -263,16 +348,165 @@ main{
   .tours{
     grid-template-columns: 1fr 1fr 1fr;
     align-items: start;
-  }
+}
 }
 @media screen and (min-width: 992px){
   .tours {
     grid-template-columns: 1fr 1fr 1fr;
     align-items: start;
+}
+}
+
+
+/*Footer*/
+
+.footer {
+  margin-top: 5rem;
+  text-align: center;
+  padding: 3px;
+  background-color: var(--medium-orange);
+  color: white;
+}
+/*Form*/
+
+.form-div{
+  display: flex;
+  padding-top: 3rem;
+  justify-content: center;
+}
+.form {
+    width: 500px;
+    background: var(--medium-dark-blue);
+    padding: 2rem;
+    margin-top: 1rem;
+}
+
+.form h2 {
+  color: var(--white-blue);
+  text-align: center;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  font-weight: 200;
+  font-size: xx-large;
+  font-family: 'Handlee', cursive;
+  font-family: 'Sansita', sans-serif;
+}
+
+/*Portfolios css*/
+.title-portfolio {
+  margin-top: 3rem;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+  text-align: center;
+  color: var(--dark-blue);
+}
+.main{
+  width: 90vw;
+  max-width: 1170px;
+  margin: 5rem auto;
+}
+
+.main-portfolio-div{
+  background: transparent;
+}
+.idk{
+    padding: 1.0rem 1.5rem;
+}
+.single-portfolio {
+  background-color: var(--white-blue);
+  border-radius: var(--radius);
+  margin: 2rem 0;
+  box-shadow: var(--light-shadow);
+  transition: var(--transition);
+  position: relative;
+
+}
+.single-portfolio:hover {
+  box-shadow: var(--dark-shadow);
+}
+
+.img-portfolio{
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+  border-top-right-radius: var(--radius);
+  border-top-left-radius: var(--radius);
+}
+
+/*changed gap from 2rem*/
+.portfolios{
+  padding: 2rem 0;
+  display: grid;
+  gap: 1rem;
+  
+}
+.portfolio-price {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: var(--clr-primary-5);
+  background: var(--clr-primary-10);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius);
+  letter-spacing: .1rem ;
+}
+
+.portfolio-info{
+  padding: 1.0rem 1.5rem;
+}
+.portfolio-info h5 {
+  font-family: 'Handlee', cursive;
+  font-family: 'Sansita', sans-serif;
+  font-size: larger;
+  text-align: center;
+  margin-bottom: 1rem;
+
+  line-height: 1.5;
+}
+
+.portfolio-info p {
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  color: var(--clr-grey-3);
+}
+
+.delete-portfolio-btn {
+  display: block;
+  font-family: 'Handlee', cursive;
+  font-family: 'Sansita', sans-serif;
+  width: 300px;
+  margin: 1rem auto 0 auto;
+  letter-spacing: var(--spacing);
+  background: transparent;
+  padding: 0.25rem 0.5rem;
+  border-radius: 1px solid var(--dark-shadow);
+}
+.delete-portfolio-btn:hover {
+  background: var(--clr-grey-10);
+  color: var(white);
+}
+
+.info-portfolio-btn{
+  background: transparent;
+  color: #005f73;
+  font-weight: 600;
+  border: none;
+}
+
+.info-portfolio-btn:hover{
+  color: var(--clr-primary-5);
+}
+
+/* @media screen and (min-width: 768px){
+  .portfolios{
+    grid-column-start: auto;
+  }
+} */
+
+@media screen and (min-width: 500px){
+  .portfolios{
+    grid-template-columns: repeat(auto-fit, minmax(20rem, auto));
+    align-items: start;
   }
   
 }
-/* @media screen and (min-width:992px){
-.section{ 
-width: 95vw;
-}} */
