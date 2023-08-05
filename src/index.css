@@ -1,5 +1,4 @@
 :root{
-  --primary: #645cff;
   --white: #fff;
   --light-shadow: 0 5px 15px rgba(124, 78, 109, 0.1);
   --transition: all 0.3s linear;
@@ -24,6 +23,7 @@
   --light-blue: #B8CBD9;
   --white-blue: #eaf4f4;
   --medium-orange: #DB966B;
+  --dark-orange: #d08353;
   --max-width: 1170px;
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   --radius: 0.25rem;
@@ -61,16 +61,16 @@ body {
 }
 
 .title-photography {
+  margin-top: 3rem;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
   text-align: center;
-  font-size: xx-large;
-  text-transform: capitalize;
-  margin-bottom: 3.0rem;
-  margin-top: 3.0rem;
+  color: var(--dark-blue);
+  font-size: xxx-large;
   font-family: 'Handlee', cursive;
   font-family: 'Sansita', sans-serif;
-  letter-spacing: 0.1rem;
-  font-weight: 300;
-  color: var(--dark-blue);
+  letter-spacing: 0.02em;
+  text-shadow: 3px 3px 4px var(--clr-white);
   
 }
 .underline {
@@ -94,19 +94,6 @@ ul {
 a{
   text-decoration: none;
 }
-
-/* .btn {
-  background: #645cff;
-  color: #fff;
-  border: none;
-  border-radius: 0.25 rem;
-  cursor: pointer;
-  text-transform: capitalize;
-  padding: 0.25 rem;
-  display: block;
-  width: 200px;
-  margin: 1 rem auto;
-} */
 
 
 
@@ -184,12 +171,25 @@ a{
   padding-bottom: 1rem;
 
 }
-.studio-text-div p {
-  letter-spacing: 0.1rem;
-  text-transform: uppercase;
-  line-height: 1;
-
+.studio-text-div ul {
+  display: inline block;
 }
+.studio-text-div li {
+
+    list-style-position: inside;
+    list-style-type: none;
+    text-align: left;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    font-family: 'Handlee', cursive;
+    font-family: 'Sansita', sans-serif;
+    font-size: large;
+    padding-bottom: 1rem;
+    list-style-image: fa-solid fa-heart;
+    line-height: 1.5;
+  }
+
+
 .studio-article h1{
   letter-spacing: 0.2rem;
   text-transform: uppercase;
@@ -213,7 +213,7 @@ a{
 
 }
 .biography-text-div{
-  color: yellow;
+  color: #446776;
   width: 400px;
   height: 400px;
   text-align: center;
@@ -222,7 +222,7 @@ a{
 .biography-text-div p {
   letter-spacing: 0.2rem;
   text-transform: uppercase;
-  font-family: 'Handlee', cursive;
+  font-weight: 600;
   line-height: 1.8;
 
 }
@@ -246,7 +246,6 @@ a{
   object-fit: cover;
   border: 8px solid #446776;
 }
-
 
 
 /*tours css*/
@@ -357,16 +356,6 @@ main{
 }
 }
 
-
-/*Footer*/
-
-.footer {
-  margin-top: 5rem;
-  text-align: center;
-  padding: 3px;
-  background-color: var(--medium-orange);
-  color: white;
-}
 /*Form*/
 
 .form-div{
@@ -399,6 +388,11 @@ main{
   margin-bottom: 3rem;
   text-align: center;
   color: var(--dark-blue);
+  font-size: xxx-large;
+  font-family: 'Handlee', cursive;
+  font-family: 'Sansita', sans-serif;
+  letter-spacing: 0.02em;
+  text-shadow: 3px 3px 4px var(--clr-white);
 }
 .main{
   width: 90vw;

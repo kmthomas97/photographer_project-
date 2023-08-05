@@ -19,16 +19,15 @@ import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
 import Biography from './components/Biography';
 import Studio from './components/Studio';
+import ReviewSlider from './components/ReviewSlider';
+import BottomFooter from './components/BottomFooter';
 // const url = 'https://course-api.com/react-tours-project';
 
 const url = 'packagesData.json';
 const urlPortfolio = 'portfolioData.json';
-const people = 'reviewsData.json';
 
   function App(){
 
-    const [index, setIndex] =useState(0);
-    const {name, job, image, text} = people[index]
 
     const [isLoading, setIsLoading]= useState(true)
     const [tours, setTours]= useState([])
@@ -128,7 +127,6 @@ const people = 'reviewsData.json';
 
 
     return (
-
       <div>
       <Navbar/>
       <Hero/>
@@ -142,6 +140,7 @@ const people = 'reviewsData.json';
       <br></br>
       <br></br>
       <br></br>
+      <br></br>
       <Tours tours={tours} removeTour={removeTour} />
       <br></br>
       <br></br>
@@ -150,14 +149,17 @@ const people = 'reviewsData.json';
       <Studio/>
       <br></br>
       <br></br>
+      <ReviewSlider/>
       <br></br>
       <Portfolios portfolios={portfolios} removePortfolio={removePortfolio} />
       <br></br>
       <br></br>
       <ContactForm/>
       <br></br>
+      <br/>
       <br></br>
-      <Footer/>
+      <Footer/> 
+      <BottomFooter/>
       {/* <br></br>
       <ContactForm/>
       <Footer/> */}

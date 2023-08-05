@@ -38,7 +38,7 @@ const Button = styled.button.attrs((props) => {
 
   const ContactForm = () => {
   return (
-    <div className="form-div">
+    <div id='contact' className="form-div">
         {/* <h2>some random stuff</h2>
         <Button>click me</Button> */}
         <form className="form">

@@ -19,7 +19,7 @@ const Navbar = () => {
     return ( 
     <StyledNavbar>
       <div className="nav-header"/>
-         <img src='./images/download (13).svg'
+         <img src='./images/logo13.svg'
         alt='logo' />
         <button className="nav-toggle" onClick={toggleLinks}>
           <FaBars />
