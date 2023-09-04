@@ -1,55 +1,80 @@
 import React from "react"
-import styled, {css} from 'styled-components/macro'
+import { useRef } from 'react';
+import styled from 'styled-components'
 
-const Button = styled.button.attrs((props) => {
-    return {type: props.type || 'button'}
-})`
-    background:var(--dark-blue);
-    border:none;
-    color:white;
-    padding:0.55rem;
-    :hover{
-        background: var(--blue-medium);
+const ContactForm = () => {
+    const form = useRef();
+    const sendEmail = (e) => {
+        e.target.reset();
     }
-    cursor: pointer;
-    ${({type})=>{
-        return type === 'submit' && 
-        css`
-            display: block;
-            width: 100%;
-            margin-top: 1.5rem;
-            border-radius: 0.25rem;
-        `
-    }}
-`
-    const BasicInput = styled.input.attrs((props) => {
-        return{
-            type: props.type || 'text',
-            placeholder: props.placeholder || 'please enter value',
-        }
-    })`
-    box-sizing: border-box;
-    padding: 1rem;
-    border: 5px solid #f2f4f8;
-    border-radius: 0.25rem;
-    width: 100%;
-    margin-top: 1rem;
-    `
+    return (
+        <StyledSection id='contact'>
+            <form ref={form} onSubmit={sendEmail}>
+            <h2>Contact Me</h2>
+                    <input type='package' placeholder={"Enter Photography Package"}/>
+                    <input type='name' placeholder={"Enter Name"}/>
+                    <input type='package' placeholder={"Enter Phone Number"}/>
+                    <input type="email" placeholder={"Enter Email"}/>
+                    <button type ='submit'>Submit</button>
+            </form>
+        </StyledSection>
+    )
+    }
 
-  const ContactForm = () => {
-  return (
-    <div id='contact' className="form-div">
-        {/* <h2>some random stuff</h2>
-        <Button>click me</Button> */}
-        <form className="form">
-        <h2>Contact Me</h2>
-                <BasicInput type='package' placeholder={"Enter Photography Package"}/>
-                <BasicInput type='name' placeholder={"Enter Name"}/>
-                <BasicInput type='package' placeholder={"Enter Phone Number"}/>
-                <BasicInput type="email" placeholder={"Enter Email"}/>
-                <Button type ='submit'>Submit</Button>
-        </form>
-    </div>
-  )
-}
+const StyledSection = styled.section `
+        display: flex;
+        padding-top: 3rem;
+        justify-content: center;
+    
+    form {
+        width: 500px;
+        background: #71A0B2;
+        padding: 2rem;
+        margin-top: 1rem;
+        padding-top: .5rem;
+        padding-bottom: 3rem;
+    }
+    
+    form h2 {
+        color: var(--white-blue);
+        text-align: center;
+        letter-spacing: 0.1rem;
+        text-transform: uppercase;
+        font-weight: 200;
+        font-size: xx-large;
+        font-family: 'Handlee', cursive;
+        font-family: 'Sansita', sans-serif;
+    }
+    button{
+
+     display: block;
+     width: 100%;
+     margin-top: 1.5rem;
+     border-radius: 0.25rem;
+     font-size:medium;
+     background:var(--dark-blue);
+     border:none;
+     color:white;
+     padding-top: 25px;
+     padding-bottom: 25px;
+    }
+
+    button:hover {
+        background: var(--blue-medium);
+    
+        cursor: pointer;
+    }
+    
+    input {
+        box-sizing: border-box;
+        padding: 1rem;
+        border: 5px solid #f2f4f8;
+        border-radius: 0.25rem;
+        width: 100%;
+        margin-top: 1rem;
+        margin-bottom: .5rem;
+    }
+
+`
+    
 export default ContactForm

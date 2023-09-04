@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react'
 import styled from 'styled-components';
-import ReviewData from "../ReviewData"
+import StaffData from "../StaffData"
 
-    const ReviewSlider = () => {
-    const [people] = useState(ReviewData);
+    const StaffSlider = () => {
+    const [people] = useState(StaffData);
     const [index, setIndex] = useState(0);
 
     useEffect(()=> {
@@ -26,11 +26,11 @@ import ReviewData from "../ReviewData"
     }, [index])
 
   return (
-    <StyledReviewSection id='reviews'>
-        <div className='review-title'>
+    <StyledStaffSection id='staff'>
+        <div className='staff-title'>
             <h2>My Team</h2>
         </div>
-        <div className='review-section-center'>
+        <div className='staff-section-center'>
             {people.map((item, indexPeople) => {
                 const {id,image,name,job,quote} = item;
                 let position = "nextSlide";
@@ -43,30 +43,30 @@ import ReviewData from "../ReviewData"
                 return (
                     <article className= {position} key={id}>
                         <img src={image} alt={name} className='person-img'/>
-                        <h4 className='review-h4'>{name}</h4>
+                        <h4 className='staff-h4'>{name}</h4>
                         <h3 className='job'>{job}</h3>
-                        <p className='review-text'>{quote}</p>
+                        <p className='staff-text'>{quote}</p>
                     </article>
                 );
             })}
             <button className='prev' onClick={() => setIndex(index - 1)}>
-                <i className='fa fa-circle-arrow-left fa-lg'/>
+                <i className='fa fa-circle-arrow-left fa-2xl'/>
             </button>
             <button className='next' onClick={() => setIndex(index + 1)}>
-                <i className='fa fa-circle-arrow-right fa-lg'/>
+                <i className='fa fa-circle-arrow-right fa-2xl'/>
             </button>
         </div>
-    </StyledReviewSection>
+    </StyledStaffSection>
   );
 }
 
 
- const StyledReviewSection = styled.section`
+ const StyledStaffSection = styled.section`
   width: 90vw;
   margin: 4rem auto;
   max-width: 1170px;
 
-.review-h4{
+.staff-h4{
   letter-spacing: 0.1rem;
   text-transform: capitalize;
   line-height: 1.25;
@@ -74,7 +74,7 @@ import ReviewData from "../ReviewData"
 }
 
 @media screen and (min-width: 992px) {
-  .review-section{
+  .staff-section{
     width: 95vw;
   }
 }
@@ -90,7 +90,7 @@ import ReviewData from "../ReviewData"
   color: hsl(209, 34%, 30%);
   font-weight: 500;
 }
-.review-section-center{
+.staff-section-center{
   margin: 0 auto;
   margin-top: 3rem;
   margin-bottom: 4rem;
@@ -143,18 +143,18 @@ article h4 {
   margin-top: 0rem;
   font-weight: 500;
 }
-.review-title {
+.staff-title {
   letter-spacing: 0.2rem;
   font-size: x-large;
   text-transform: capitalize;
   color: hsl(209, 34%, 30%);
   font-weight: 500;
 }
-.review-title {
+.staff-title {
   text-align: center;
   margin-bottom: .5rem;
 }
-.review-title h2{
+.staff-title h2{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -163,7 +163,7 @@ article h4 {
   font-family: 'Handlee', cursive;
   font-family: 'Sansita', sans-serif;
 }
-.review-text{
+.staff-text{
   letter-spacing: .05 rem;
   font-size: large;
   text-transform: capitalize;
@@ -175,26 +175,43 @@ article h4 {
   line-height: 2;
   height: 110px;
 }
-.prev, 
-.next {
+.prev {
   position: absolute;
-  top: 200px;
+  top: 250px;
   transform: translateY(-50%);
   background: transparent;
   color: var(--medium-orange);
   width: 1.25rem;
   height: 1.25rem;
-  display: grid;
+  display: center;
   place-items: center;
   border-color: transparent;
   font-size: 1rem;
-  border-radius: 0.25rem;
+  border-radius: 2.25rem;
   cursor: pointer;
   transition: all 0.3s linear;
+  padding-left: 3rem;
+}
+.next {
+  position: absolute;
+  top: 250px;
+  transform: translateY(-50%);
+  background: transparent;
+  color: var(--medium-orange);
+  width: 1.25rem;
+  height: 1.25rem;
+  display: center;
+  place-items: center;
+  border-color: transparent;
+  font-size: 1rem;
+  border-radius: 2.25rem;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  padding-right: 5.5rem;
 }
 .prev:hover,
 .next:hover {
-  background: hsl(21, 62%, 45%);
+  background: transparent;
 }
 .prev{
   left: 0;
@@ -203,7 +220,7 @@ article h4 {
   right: 0;
 }
 @media (min-width: 800px ){
-  .review-text {
+  .staff-text {
     max-width: 45rem;
   }
   .prev,
@@ -215,4 +232,4 @@ article h4 {
 } 
 `
 
-export default ReviewSlider
+export default StaffSlider

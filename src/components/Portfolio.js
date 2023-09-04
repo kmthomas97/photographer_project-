@@ -1,6 +1,4 @@
-import { useState } from "react"
-
-const Portfolio = ({ id, image, info, name, price, removePortfolio }) =>  { const [readMore, setReadMore] = useState(false)
+const Portfolio = ({ image, name }) =>  { 
 
   return (<article id ="portfolio" className="single-portfolio">
     <div className='idk'></div>

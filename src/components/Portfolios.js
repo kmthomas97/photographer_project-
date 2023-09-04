@@ -1,6 +1,6 @@
 import Portfolio from "./Portfolio"
 
-const Portfolios = ({portfolios, removePortfolio}) => {
+const Portfolios = ({portfolios}) => {
   return <section>
     <div className="main-portfolio-div">
     <div className="title-portfolio">
@@ -9,7 +9,7 @@ const Portfolios = ({portfolios, removePortfolio}) => {
     <div className="portfolios">
       {portfolios.map((portfolio)=>{
         console.log(portfolio);
-      return <Portfolio key={portfolio.id} {...portfolio} removePortfolio ={removePortfolio}/>;
+      return <Portfolio key={portfolio.id} {...portfolio}/>;
       })}
     </div>
     </div>

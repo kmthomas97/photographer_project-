@@ -1,27 +1,17 @@
-import styled from 'styled-components/macro'
-import Card from './components/Card';
-import {HipsterButton} from './components/Buttons';
 import Navbar from './components/Navbar';
-import Products from './components/Products';
-//import List from './components/List';
-import Form from './components/Form'
-import Product from './components/Product';
-import Info from './components/Info';
-import { Container, Box} from '@mui/system';
-import { blue } from '@mui/material/colors';
 import { useEffect, useState } from 'react';
-import Tours from './components/Tours';
+import Bundles from './components/Bundles';
 import Hero from './components/Hero';
 import Loading from './Loading';
 import LoadingPortfolio from './components/LoadingPortfolio';
 import Portfolios from './components/Portfolios';
 import ContactForm from './components/ContactForm';
-import Footer from './components/Footer';
 import Biography from './components/Biography';
 import Studio from './components/Studio';
-import ReviewSlider from './components/ReviewSlider';
+import StaffSlider from './components/StaffSlider';
 import BottomFooter from './components/BottomFooter';
-// const url = 'https://course-api.com/react-tours-project';
+import NewFooter from './components/NewFooter';
+import FooterLogo from './components/FooterLogo';
 
 const url = 'packagesData.json';
 const urlPortfolio = 'portfolioData.json';
@@ -30,15 +20,15 @@ const urlPortfolio = 'portfolioData.json';
 
 
     const [isLoading, setIsLoading]= useState(true)
-    const [tours, setTours]= useState([])
+    const [bundles, setBundles]= useState([])
 
     //Portfolio
     const [isLoadingPortfolio, setIsLoadingPortfolio]= useState(true)
     const [portfolios, setPortfolios] = useState([])
 
-    const removeTour = (id) => {
-      const newTours = tours.filter((tour) => tour.id !== id);
-      setTours(newTours);
+    const removeBundle = (id) => {
+      const newBundles = bundles.filter((bundle) => bundle.id !== id);
+      setBundles(newBundles);
     };
 
     //Portfolio
@@ -49,12 +39,12 @@ const urlPortfolio = 'portfolioData.json';
     
 
 
-    const fetchTours = async () =>{
+    const fetchBundles = async () =>{
       setIsLoading(true);
       try{
         const response = await fetch(url);
-        const tours = await response.json();
-        setTours(tours);
+        const bundles = await response.json();
+        setBundles(bundles);
       } catch (error) {
         console.log(error);
       }
@@ -79,7 +69,7 @@ const urlPortfolio = 'portfolioData.json';
     };
 
     useEffect(()=>{
-      fetchTours();
+      fetchBundles();
      }, []);
 
      //Portfolio
@@ -93,16 +83,7 @@ const urlPortfolio = 'portfolioData.json';
       </main>
      }
 
-     if(tours.length === 0){
-        <div className='title'>
-          <h2>no tours left</h2>
-          <button type='button' style={{marginTop:'2rem'}}
-          className='buttonReadMore' onClick={()=> fetchTours()}
-          >
-            Refresh
-          </button>
-        </div>
-     }
+
 
      if(isLoadingPortfolio){
       return <main>
@@ -127,7 +108,7 @@ const urlPortfolio = 'portfolioData.json';
 
 
     return (
-      <div>
+    <div>
       <Navbar/>
       <Hero/>
       <br></br>
@@ -141,7 +122,7 @@ const urlPortfolio = 'portfolioData.json';
       <br></br>
       <br></br>
       <br></br>
-      <Tours tours={tours} removeTour={removeTour} />
+      <Bundles bundles={bundles} removeBundle={removeBundle} />
       <br></br>
       <br></br>
       <br></br>
@@ -149,7 +130,7 @@ const urlPortfolio = 'portfolioData.json';
       <Studio/>
       <br></br>
       <br></br>
-      <ReviewSlider/>
+      <StaffSlider/>
       <br></br>
       <Portfolios portfolios={portfolios} removePortfolio={removePortfolio} />
       <br></br>
@@ -158,22 +139,9 @@ const urlPortfolio = 'portfolioData.json';
       <br></br>
       <br/>
       <br></br>
-      <Footer/> 
+      <FooterLogo/>
+      <NewFooter/>
       <BottomFooter/>
-      {/* <br></br>
-      <ContactForm/>
-      <Footer/> */}
-      {/* <Tours tours={tours}/> */}
-      {/* <Box display={'flex'} flexDirection={'row'} justifyContent={'space-evenly'} backgroundColor={'#B2AC88'}> <Card/> </Box>
-      <br></br>
-      <Box display={'flex'} flexDirection={'row'} justifyContent={'space-evenly'}> <Info/> <Maincard/> </Box>
-      <Form /> */}
-      {/* <HipsterButton as="a" href='https://www.sonicdrivein.com/'>click me</HipsterButton>
-      <HipsterButton large>click me</HipsterButton>
-      <HipsterButton>click me</HipsterButton>
-      <div css={`color:green`}>
-        <h2>hello world</h2>
-      </div> */}
   </div>
 )
 
